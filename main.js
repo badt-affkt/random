@@ -24,7 +24,7 @@ function generateUniqueName() {
 
 
 //Function to push random cat fact to the GitHub repo
-async function pushRandomCatName(repoOwner, token) {
+async function pushrandom(repoOwner, token) {
     //API initialization
     const octokit = new Octokit({ auth: token });
 
@@ -53,7 +53,7 @@ async function pushRandomCatName(repoOwner, token) {
 
         //If file name is not unique, generate new name
         if (isAlreadyFileNameExist) {
-            pushRandomCatName(repoOwner, token);
+            pushrandom(repoOwner, token);
         }
 
         // Push file to the repo
@@ -74,7 +74,7 @@ async function pushRandomCatName(repoOwner, token) {
 //Function to start execution
 function startExecution() {
     gitTokens.forEach((token, index) => {
-        pushRandomCatName(gitNames[index], token);
+        pushrandom(gitNames[index], token);
     })
 }
 
